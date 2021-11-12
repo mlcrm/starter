@@ -1,4 +1,4 @@
-###For a quick start, run the following commands:
+### For a quick start, run the following commands:
     1. yarn install (install javascript dependencies)
     2. yarn build (assembly of styles and scripts)
     3. make build (build a docker container)
