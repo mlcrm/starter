@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html dir="{{ document.direction }}" lang="{{ document.lang }}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="{{ document.robots }}" />
+  <meta name="description" content="{{ document.description }}">
+  <meta name="keywords" content="{{ document.keywords }}" />
+  <meta name="author" content="{{ document.author }}" />
+  <title>{{ document.title }}</title>
+{% for entrypoint in document.entrypoints %}{{ encore_entry_link_tags(entrypoint) }}
+{% endfor %}
+  <link rel="icon" href="{{ asset(document.favicon) }}" type="image/x-icon">
+  <link rel="apple-touch-icon" href="{{ asset(document.favicon192) }}">
+  <link rel="manifest" href="{{ asset(document.manifest) }}">
+  <meta name="theme-color" content="{{ document.themeColor }}">
+</head>
+<body>
+{% block body %}{% endblock %}
+{% for entrypoint in document.entrypoints %}{{ encore_entry_script_tags(entrypoint) }}
+{% endfor %}
+</body>
+</html>

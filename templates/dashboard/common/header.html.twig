@@ -1,0 +1,37 @@
+<div class="header-left">
+  <div
+    class="header-left__sidebar-toggle"
+    data-action="click->dashboard--common#toggleSidebarVisibility"
+  >
+    <svg width="26" height="19" viewBox="0 0 26 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect y="8" width="26" height="3" fill="#495057"/>
+      <rect y="16" width="16" height="3" fill="#495057"/>
+      <rect width="20" height="3" fill="#495057"/>
+    </svg>
+  </div>
+</div>
+
+
+<div class="header-right">
+  <div class="header-right__item">
+    <div class="header-right__profile dropdown-toggle" id="profile" data-bs-toggle="dropdown" aria-expanded="false">
+      <img class="header-right__profile-avatar" src="{{ asset('images/profile.png') }}" alt="profile avatar">
+      <span class="header-right__profile-name d-none d-lg-block">{{ app.user.firstname }} {{ app.user.lastname }}</span>
+    </div>
+    <ul class="dropdown-menu" aria-labelledby="profile">
+      <li>
+        <a class="dropdown-item header-right__dropdown-item" href="#">
+          <span><i class="bi bi-person-circle"></i></span>
+          <span class="header-right__dropdown-item-text">{{ 'Ваш профиль'|trans([], 'dashboard') }}</span>
+        </a>
+      </li>
+      <li><hr class="dropdown-divider"></li>
+      <li>
+        <a class="dropdown-item header-right__dropdown-item" href="{{ path('dashboard.logout') }}">
+          <span><i class="bi bi-box-arrow-in-right"></i></span>
+          <span class="header-right__dropdown-item-text">{{ 'Выйти'|trans([], 'dashboard') }}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

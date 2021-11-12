@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <div
+    class="dashboard"
+    data-controller="dashboard--common"
+  >
+    <nav
+      class="sidebar"
+      data-dashboard--common-target="sidebar"
+    >
+      {{ sidebar|raw }}
+    </nav>
+    <div
+      class="main"
+      data-dashboard--common-target="main"
+    >
+      <header class="header">{{ header|raw }}</header>
+      <main class="content">{{ content|raw }}</main>
+      <footer class="footer">{{ footer|raw }}</footer>
+    </div>
+  </div>
+{% endblock %}

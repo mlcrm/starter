@@ -1,0 +1,32 @@
+@import "../variables"
+
+.header-left
+  display: flex
+  align-items: center
+  justify-content: center
+  font-size: 28px
+  &__sidebar-toggle
+    padding: 5px 15px 5px 0
+    cursor: pointer
+
+.header-right
+  display: flex
+  align-items: center
+  &__item
+    position: relative
+    height: 100%
+  &__dropdown-item
+    display: flex
+    align-items: center
+    font-size: 14px
+    color: $text-color
+    &-text
+      margin-left: 10px
+  &__profile
+    display: flex
+    align-items: center
+    height: 100%
+    cursor: pointer
+    &-avatar
+      border-radius: 50%
+      margin-right: 5px

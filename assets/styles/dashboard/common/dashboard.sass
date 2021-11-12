@@ -1,0 +1,58 @@
+@import "../variables"
+@import "header"
+@import "sidebar"
+@import "footer"
+@import "copyright"
+
+.dashboard
+  overflow: hidden
+
+.sidebar
+  position: fixed
+  left: 0
+  top: 0
+  bottom: 0
+  min-width: $sidebar-width
+  background-color: $sidebar-bg
+  color: $sidebar-color
+  transition: $transition
+  overflow: auto
+
+.main
+  margin-left: $sidebar-width
+  transition: $transition
+  &--expand
+    margin-left: 0
+  &--move
+    transform: translateX($sidebar-width)
+
+.header
+  display: flex
+  justify-content: space-between
+  min-height: $navbar-height
+  padding: 0 20px
+  background-color: #fff
+  box-shadow: 0 0 2rem 0 rgb(41 48 66 / 10%)
+
+.content
+  padding: 20px
+  min-height: 600px
+  &-header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 20px
+    &-title
+      font-size: 20px
+      font-weight: 500
+    //&-action
+
+.footer
+  display: flex
+  align-items: center
+  justify-content: center
+  min-height: 100px
+
+@media (max-width: 992px)
+  .main
+    margin-left: 0

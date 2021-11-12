@@ -1,0 +1,29 @@
+security:
+    enable_authenticator_manager: true
+    password_hashers:
+        App\Entity\User:
+            algorithm: auto
+    providers:
+        user_provider:
+            entity:
+                class: App\Entity\User
+                property: email
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        dashboard:
+            pattern: ^/dashboard
+            provider: user_provider
+            entry_point: form_login
+            form_login:
+                login_path: dashboard.login
+                check_path: dashboard.login
+                default_target_path: dashboard
+                always_use_default_target_path: true
+                enable_csrf: true
+            logout:
+                path: dashboard.logout
+    access_control:
+        - { path: ^/dashboard/login, roles: PUBLIC_ACCESS }
+        - { path: ^/dashboard, roles: ROLE_ADMIN }

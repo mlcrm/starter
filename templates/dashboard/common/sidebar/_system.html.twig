@@ -1,0 +1,32 @@
+{% import 'dashboard/macro/_sidebar.html.twig' as sidebar %}
+<!---------------- System ------------------->
+<div class="sidebar-item">
+  {{ sidebar.body_header('system', '<i class="bi bi-gear-fill"></i>', 'Система'|trans([], 'dashboard')) }}
+  <div class="collapse sidebar-list" id="system">
+    {{ sidebar.list_item("#", 'Настройки'|trans([], 'dashboard')) }}
+    <div class="sidebar-subitem">
+      {{ sidebar.body_header('locale', '<i class="bi bi-translate"></i>', 'Локализация'|trans([], 'dashboard')) }}
+      <div class="collapse sidebar-list" id="locale">
+        {{ sidebar.list_item("#", 'Местонахождение'|trans([], 'dashboard')) }}
+        {{ sidebar.list_item("#", 'Языки'|trans([], 'dashboard')) }}
+        <div class="sidebar-subitem">
+          {{ sidebar.body_header('taxes', '<i class="bi bi-cash-coin"></i>', 'Налоги'|trans([], 'dashboard')) }}
+          <div class="collapse sidebar-list" id="taxes">
+            {{ sidebar.list_item("#", 'Налоговый класс'|trans([], 'dashboard')) }}
+            {{ sidebar.list_item("#", 'Налоговые ставки'|trans([], 'dashboard')) }}
+          </div>
+        </div>
+        {{ sidebar.list_item("#", 'Единицы измерения'|trans([], 'dashboard')) }}
+        {{ sidebar.list_item("#", 'Единицы веса'|trans([], 'dashboard')) }}
+      </div>
+    </div>
+    <div class="sidebar-subitem">
+      {{ sidebar.body_header('service', '<i class="bi bi-hdd"></i>', 'Обслуживание'|trans([], 'dashboard')) }}
+      <div class="collapse sidebar-list" id="service">
+        {{ sidebar.list_item("#", 'Архивирование'|trans([], 'dashboard')) }}
+        {{ sidebar.list_item("#", 'Внешние загрузки'|trans([], 'dashboard')) }}
+        {{ sidebar.list_item("#", 'Журнал ошибок'|trans([], 'dashboard')) }}
+      </div>
+    </div>
+  </div>
+</div>

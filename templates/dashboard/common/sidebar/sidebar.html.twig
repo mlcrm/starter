@@ -1,0 +1,10 @@
+<div class="sidebar__header">
+  <a class="sidebar-header__link" href="{{ path('dashboard') }}">
+    <img class="sidebar-header__img" src="{{ asset('images/logo.png') }}" alt="Logo">
+  </a>
+</div>
+
+<div class="sidebar__body">
+  {% include 'dashboard/common/sidebar/_system.html.twig' %}
+  {% include 'dashboard/common/sidebar/_report.html.twig' %}
+</div>

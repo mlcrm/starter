@@ -1,0 +1,22 @@
+{% macro body_header(id, icon, text) %}
+    <div
+        class="sidebar-header" data-bs-toggle="collapse"
+        data-bs-target="#{{ id }}"
+        aria-expanded="false"
+        aria-controls="{{ id }}"
+        data-action="click->dashboard--common#rotateSidebarIcon"
+    >
+        <div class="sidebar-header__block-title">
+            <span class="sidebar-header__left-icon">{{ icon|raw }}</span>
+            <span class="sidebar-header__text">{{ text }}</span>
+        </div>
+        <span class="sidebar-header__right-icon"><i class="bi bi-chevron-right"></i></span>
+    </div>
+{% endmacro %}
+
+{% macro list_item(href, text) %}
+    <div class="sidebar-list__item">
+        <div class="sidebar-list__left-icon"><i class="bi bi-chevron-double-right"></i></div>
+        <a class="sidebar-list__link" href="{{ href }}">{{ text }}</a>
+    </div>
+{% endmacro %}
