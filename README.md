@@ -8,6 +8,6 @@
 
 >http://127.0.0.1:8000 - (homepage)
 
-> http://127.0.0.1:8080 - (dashboard control panel)
+> http://127.0.0.1:8080 - (database control panel)
 
 > http://127.0.0.1:8000/dashboard - (control panel)
