@@ -7,5 +7,5 @@
     6. make fixtures (adding a user to the system)
 http://127.0.0.1:8000 - (project start page)  
 http://127.0.0.1:8000/dashboard/login - (control panel login)  
-http://127.0.0.1:8000/dashboard - (control Panel)
+http://127.0.0.1:8000/dashboard - (control Panel)  
 http://127.0.0.1:8080 - (database control panel)
