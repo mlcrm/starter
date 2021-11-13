@@ -20,9 +20,9 @@ class LoginController extends AbstractController
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         $this->documentService
-            ->setTitle($this->translator->trans('Вход в личный кабинет', [], 'dashboard'))
+            ->setTitle($this->translator->trans('Вход в личный кабинет', [], 'account'))
             ->setRobots('noindex')
-            ->addEntrypoint('dashboard')
+            ->addEntrypoint('account')
         ;
 
         $data['error'] = $authenticationUtils->getLastAuthenticationError();
