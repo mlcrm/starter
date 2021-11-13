@@ -33,6 +33,6 @@ make fixtures
 docker exec -it php-fpm php bin/console doctrine:fixtures:load
 ```
 
-> http://127.0.0.1:8000             - homepage<br/>
-> http://127.0.0.1:8080             - database control panel<br/>
-> http://127.0.0.1:8000/dashboard   - control panel
+> http://127.0.0.1:8000 - homepage<br/>
+> http://127.0.0.1:8080 - database control panel<br/>
+> http://127.0.0.1:8000/dashboard - control panel
