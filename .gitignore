@@ -3,6 +3,7 @@
 /docker/nginx/logs/app_access.log
 /docker/nginx/logs/app_error.log
 /docker-compose.override.yaml
+/token.txt
 
 ###> symfony/framework-bundle ###
 /.env.local
