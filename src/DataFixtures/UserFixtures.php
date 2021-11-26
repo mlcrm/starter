@@ -21,14 +21,14 @@ class UserFixtures extends Fixture
         $admin
             ->setEmail('admin@example.com')
             ->setRoles(['ROLE_ADMIN'])
-            ->setPassword($this->hasher->hashPassword($admin, 'admin_'))
+            ->setPassword($this->hasher->hashPassword($admin, 'admin_secret_'))
             ->setFirstname('John')
             ->setLastname('Doe');
 
         $user
             ->setEmail('user@example.com')
             ->setRoles(['ROLE_USER'])
-            ->setPassword($this->hasher->hashPassword($admin, 'user_'))
+            ->setPassword($this->hasher->hashPassword($admin, 'user_secret_'))
             ->setFirstname('Jane')
             ->setLastname('Doe');
 

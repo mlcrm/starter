@@ -1,57 +1,62 @@
 version: '3.8'
 
 services:
-  php-fpm:
-    container_name: php-fpm
-    build:
-      context: ./docker/php
-      dockerfile: Dockerfile
-    depends_on:
-      - db
-    networks:
-      - backend
-    volumes:
-    - ./:/app
+    php-fpm:
+        container_name: php-fpm
+        user: $USER
+        build:
+            context: ./docker/php
+            dockerfile: Dockerfile
+            args:
+                APP_USERNAME: $USER
+        depends_on:
+            - db
+        networks:
+            - backend
+        volumes:
+            - ./:/app
 
-  nginx:
-    container_name: nginx
-    build:
-      context: ./docker/nginx
-      dockerfile: Dockerfile
-    depends_on:
-      - php-fpm
-    networks:
-      - backend
-    ports:
-    - "127.0.0.1:8000:80"
-    volumes:
-    - ./:/app
+    nginx:
+        container_name: nginx
+        build:
+            context: ./docker/nginx
+            dockerfile: Dockerfile
+        depends_on:
+            - php-fpm
+        networks:
+            - backend
+        ports:
+            - "127.0.0.1:8000:80"
+        volumes:
+            - ./:/app
 
-  db:
-    container_name: db
-    image: mysql
-    command: --default-authentication-plugin=mysql_native_password
-    environment:
-      MYSQL_ROOT_PASSWORD: secret_
-      MYSQL_DATABASE: mlcrm_dev
-    networks:
-      - backend
-    ports:
-    - "127.0.0.1:3306:3306"
-    volumes:
-    - ./docker/db:/var/lib/mysql
+    db:
+        container_name: db
+        image: mysql
+        command: --default-authentication-plugin=mysql_native_password
+        environment:
+            MYSQL_ROOT_PASSWORD: root_secret_
+            MYSQL_DATABASE: mlcrm_dev
+            MYSQL_USER: $USER
+            MYSQL_PASSWORD: secret_
+        networks:
+            - backend
+        ports:
+            - "127.0.0.1:3306:3306"
+        volumes:
+            - ./docker/db:/var/lib/mysql
 
-  phpmyadmin:
-    container_name: phpmyadmin
-    image: phpmyadmin
-    depends_on:
-      - db
-    networks:
-      - backend
-    ports:
-      - "127.0.0.1:8080:80"
-    environment:
-      - PMA_ARBITRARY=1
+    phpmyadmin:
+        container_name: phpmyadmin
+        image: phpmyadmin
+        depends_on:
+            - db
+        networks:
+            - backend
+        ports:
+            - "127.0.0.1:8080:80"
+        environment:
+            - PMA_ARBITRARY=1
 
 networks:
-  backend:
+    backend:
