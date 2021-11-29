@@ -1,6 +1,6 @@
 # The symfony framework starter template
 > php version: '>=8.0.7'<br/>
-> framework version: '5.3.10'
+> framework version: '5.3.12'
 
 This template is designed for a quick start of enterprise application development based on the symfony framework.
 
