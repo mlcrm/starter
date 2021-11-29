@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Dashboard\User;
+namespace App\Controller\Dashboard\Security;
 
 use Symfony\Component\Routing\Annotation\Route;
 

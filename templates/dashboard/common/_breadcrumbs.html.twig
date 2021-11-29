@@ -1,0 +1,14 @@
+{% if document.breadcrumbs %}
+
+  <div class="content__breadcrumbs">
+    {% for breadcrumb in document.breadcrumbs %}
+      {% if null == breadcrumb.url %}
+        <span class="content__breadcrumbs-item content__breadcrumbs-item--active">{{ breadcrumb.title|trans([], 'dashboard') }}</span>
+      {% else %}
+        <a class="content__breadcrumbs-item" href="{{ breadcrumb.url }}">{{ breadcrumb.title|trans([], 'dashboard') }}</a>
+        <span class="content__breadcrumbs-divider"><i class="bi bi-chevron-double-right"></i></span>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+{% endif %}

@@ -2,6 +2,8 @@
 
 namespace App\Service;
 
+use App\Service\Breadcrumb\BreadcrumbService;
+
 class DocumentService
 {
     private string $direction = 'ltr';
@@ -16,6 +18,10 @@ class DocumentService
     private string $manifest = 'images/manifest.json';
     private string $themeColor = '#000000';
     private array $entrypoints = [];
+
+    public function __construct(
+        private BreadcrumbService $breadcrumbService
+    ){}
 
     public function getDirection(): string
     {
@@ -135,6 +141,17 @@ class DocumentService
     public function setThemeColor(string $themeColor): self
     {
         $this->themeColor = $themeColor;
+        return $this;
+    }
+
+    public function getBreadcrumbs(): array
+    {
+        return $this->breadcrumbService->getBreadcrumbs();
+    }
+
+    public function addBreadcrumbsItem(string $title, string $url = null): self
+    {
+        $this->breadcrumbService->addItem($title, $url);
         return $this;
     }
 

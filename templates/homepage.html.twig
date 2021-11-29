@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <div class="container mt-5">
+    <div class="card">
+      <div class="card-header">
+        <i class="bi bi-house-fill"></i>
+        Стартовая страница шаблона
+      </div>
+      <div class="card-body">
+        <div class="card-text">
+          <a href="{{ path('dashboard') }}">1. Панель управления системой</a>
+        </div>
+        <div class="card-text">
+          <a href="{{ path('dashboard.profile.edit') }}">2. Страница редактирования профиля</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

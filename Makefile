@@ -12,6 +12,8 @@ show:
 	@docker images
 	@echo "==================== Networks ============================== "
 	@docker network ls
+cache-clear:
+	@docker exec -it php-fpm php bin/console cache:clear
 schema-update:
 	@docker exec -it php-fpm php bin/console doctrine:schema:update --force
 fixtures:
@@ -20,3 +22,7 @@ entity:
 	@docker exec -it php-fpm php bin/console make:entity
 entity-regenerate:
 	@docker exec -it php-fpm php bin/console make:entity --regenerate
+form:
+	@docker exec -it php-fpm php bin/console make:form
+controller:
+	@docker exec -it php-fpm php bin/console make:controller

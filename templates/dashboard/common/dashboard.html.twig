@@ -16,7 +16,10 @@
       data-dashboard--common-target="main"
     >
       <header class="header">{{ header|raw }}</header>
-      <main class="content">{{ content|raw }}</main>
+      <main class="content">
+        {% include 'dashboard/common/_breadcrumbs.html.twig' %}
+        {{ content|raw }}
+      </main>
       <footer class="footer">{{ footer|raw }}</footer>
     </div>
   </div>

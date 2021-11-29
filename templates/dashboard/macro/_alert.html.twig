@@ -1,3 +1,10 @@
+{% macro success(text) %}
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ text }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+{% endmacro %}
+
 {% macro danger(text) %}
     <div class="dashboard__alert alert alert-danger alert-dismissible fade show" role="alert">
         <div>{{ text }}</div>

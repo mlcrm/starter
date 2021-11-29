@@ -1,0 +1,18 @@
+{% macro submit_button(text) %}
+  <button class="btn btn-success" type="submit">
+    <i class="bi bi-save"></i>
+  </button>
+{% endmacro %}
+
+
+{% macro reply_button(href) %}
+  <a class="btn btn-info" href="{{ href }}">
+    <i class="bi bi-reply-fill"></i>
+  </a>
+{% endmacro %}
+
+{% macro edit_button(href) %}
+  <a class="btn btn-primary" href="{{ href }}">
+    <i class="bi bi-gear-fill"></i>
+  </a>
+{% endmacro %}

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Account\User;
+namespace App\Controller\Dashboard\Security;
 
 use App\Service\DocumentService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -16,18 +16,18 @@ class LoginController extends AbstractController
         private TranslatorInterface $translator
     ){}
 
-    #[Route(path: '/login', name: 'account.login', methods: ['GET', 'POST'])]
+    #[Route(path: '/dashboard/login', name: 'dashboard.login', methods: ['GET', 'POST'])]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         $this->documentService
-            ->setTitle($this->translator->trans('Вход в личный кабинет', [], 'account'))
+            ->setTitle($this->translator->trans('Вход в панель управления', [], 'dashboard'))
             ->setRobots('noindex')
-            ->addEntrypoint('account')
+            ->addEntrypoint('dashboard')
         ;
 
         $data['error'] = $authenticationUtils->getLastAuthenticationError();
         $data['lastUsername'] = $authenticationUtils->getLastUsername();
 
-        return $this->render('account/user/login.html.twig', $data);
+        return $this->render('dashboard/security/login.html.twig', $data);
     }
 }

@@ -1,0 +1,26 @@
+{% import 'dashboard/macro/_alert.html.twig' as alert %}
+{% import 'dashboard/macro/_action_buttons.html.twig' as actions %}
+
+{% for message in app.flashes('success') %}
+  {{ alert.success('Профиль успешно изменен!'|trans([], 'dashboard')) }}
+{% endfor %}
+
+{{ form_start(form) }}
+<div class="card">
+  <div class="card-header ml-profile__header">
+    <div class="ml-profile__header-left">
+      <span class="ml-profile__header-icon"><i class="bi bi-pen-fill"></i></span>
+      <span class="ml-profile__header-text">{{ 'Редактирование'|trans([], 'dashboard') }}</span>
+    </div>
+    <div class="ml-profile__header-right">
+      {{ actions.submit_button }}
+    </div>
+  </div>
+  <div class="card-body">
+    {{ form_row(form.firstname) }}
+    {{ form_row(form.lastname) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.password) }}
+  </div>
+</div>
+{{ form_end(form) }}

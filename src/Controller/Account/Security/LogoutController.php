@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Account\User;
+namespace App\Controller\Account\Security;
 
 use Symfony\Component\Routing\Annotation\Route;
 
