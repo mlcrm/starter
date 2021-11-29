@@ -4,6 +4,7 @@ namespace App\Controller\Dashboard;
 
 use App\Controller\Dashboard\Common\BaseController;
 use App\Form\Dashboard\ProfileType;
+use App\Repository\UserRepository;
 use App\Service\DocumentService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -19,6 +20,7 @@ class ProfileController extends AbstractController
         private BaseController $baseController,
         private DocumentService $documentService,
         private EntityManagerInterface $entityManager,
+        private UserRepository $userRepository,
         private UserPasswordHasherInterface $passwordHasher,
         private TranslatorInterface $translator
     ){}
@@ -35,14 +37,16 @@ class ProfileController extends AbstractController
             ->addBreadcrumbsItem('Профиль')
         ;
 
-        $form = $this->createForm(ProfileType::class, $this->getUser());
+        $user = $this->userRepository->findOneBy(['id' => $this->getUser()]);
+
+        $form = $this->createForm(ProfileType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
             if (null !== $plainPassword = $form->get('password')->getData()){
-                $this->getUser()->setPassword($this->passwordHasher->hashPassword($this->getUser(), $plainPassword));
+                $this->getUser()->setPassword($this->passwordHasher->hashPassword($user, $plainPassword));
             }
-            $this->entityManager->persist($this->getUser());
+            $this->entityManager->persist($user);
             $this->entityManager->flush();
             $this->addFlash('success', 'Профиль успешно изменен!');
         }
