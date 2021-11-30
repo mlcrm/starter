@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Controller\Dashboard;
+namespace App\Controller\Dashboard\User;
 
 use App\Controller\Dashboard\Common\BaseController;
-use App\Form\Dashboard\ProfileType;
+use App\Form\Dashboard\User\ProfileType;
 use App\Repository\UserRepository;
 use App\Service\DocumentService;
 use Doctrine\ORM\EntityManagerInterface;
@@ -52,7 +52,7 @@ class ProfileController extends AbstractController
         }
 
         $data['form'] = $form->createView();
-        $content = $this->renderView('dashboard/profile/edit.html.twig', $data);
+        $content = $this->renderView('dashboard/user/profile_edit.html.twig', $data);
 
         return $this->baseController->setOutput($content);
     }

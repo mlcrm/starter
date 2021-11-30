@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Form\Dashboard;
+namespace App\Form\Dashboard\User;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
