@@ -1,0 +1,45 @@
+{% import 'dashboard/macro/_alert.html.twig' as alert %}
+{% import 'dashboard/macro/_action_buttons.html.twig' as actions %}
+
+<div class="card">
+  <div class="card-header ml-profile__header">
+    <div class="ml-profile__header-left">
+      <span class="ml-profile__header-icon"><i class="bi bi-people-fill"></i></span>
+      <span class="ml-profile__header-text">{{ 'Список пользователей'|trans([], 'dashboard') }}</span>
+    </div>
+    <div class="ml-profile__header-right">
+      {{ actions.edit_button() }}
+      {{ actions.delete_button() }}
+    </div>
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Имя</th>
+          <th scope="col">Фамилия</th>
+          <th scope="col">Роли</th>
+          <th scope="col">Адрес эл.почты</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for user in users %}
+        <tr>
+          <th scope="row">
+            <input class="form-check-input" type="checkbox" value="" id="" aria-label="checkbox">
+          </th>
+            <td>{{ user.firstname }}</td>
+            <td>{{ user.lastname }}</td>
+            <td>
+              {% for role in user.roles %}
+                <span>{{ role }}</span>
+              {% endfor %}
+            </td>
+            <td>{{ user.email }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>

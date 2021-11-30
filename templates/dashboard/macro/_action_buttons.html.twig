@@ -4,7 +4,6 @@
   </button>
 {% endmacro %}
 
-
 {% macro reply_button(href) %}
   <a class="btn btn-info" href="{{ href }}">
     <i class="bi bi-reply-fill"></i>
@@ -15,4 +14,10 @@
   <a class="btn btn-primary" href="{{ href }}">
     <i class="bi bi-gear-fill"></i>
   </a>
+{% endmacro %}
+
+{% macro delete_button(id) %}
+  <button class="btn btn-danger">
+    <i class="bi bi-trash"></i>
+  </button>
 {% endmacro %}
