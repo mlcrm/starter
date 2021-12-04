@@ -1,10 +1,16 @@
 security:
     enable_authenticator_manager: true
     password_hashers:
+        App\Entity\AdminUser:
+            algorithm: auto
         App\Entity\User:
             algorithm: auto
     providers:
-        main_provider:
+        admin_user_provider:
+            entity:
+                class: App\Entity\AdminUser
+                property: email
+        user_provider:
             entity:
                 class: App\Entity\User
                 property: email
@@ -14,7 +20,7 @@ security:
             security: false
         dashboard:
             pattern: ^/dashboard
-            provider: main_provider
+            provider: admin_user_provider
             entry_point: form_login
             form_login:
                 login_path: dashboard.login
@@ -24,8 +30,9 @@ security:
                 enable_csrf: true
             logout:
                 path: dashboard.logout
+                target: dashboard.login
         account:
-            provider: main_provider
+            provider: user_provider
             entry_point: form_login
             form_login:
                 login_path: account.login
@@ -35,7 +42,8 @@ security:
                 enable_csrf: true
             logout:
                 path: account.logout
+                target: account.login
     access_control:
         - { path: ^/dashboard/login, roles: PUBLIC_ACCESS }
-        - { path: ^/dashboard, roles: ROLE_ADMIN }
+        - { path: ^/dashboard, roles: [ROLE_ADMIN] }
         - { path: ^/account, roles: ROLE_USER }

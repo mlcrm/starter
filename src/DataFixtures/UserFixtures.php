@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\AdminUser;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -15,20 +16,20 @@ class UserFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        $admin = new User();
+        $admin = new AdminUser();
         $user = new User();
 
         $admin
             ->setEmail('admin@example.com')
             ->setRoles(['ROLE_ADMIN'])
-            ->setPassword($this->hasher->hashPassword($admin, 'admin_secret_'))
+            ->setPassword($this->hasher->hashPassword($admin, 'admin_'))
             ->setFirstname('John')
             ->setLastname('Doe');
 
         $user
             ->setEmail('user@example.com')
             ->setRoles(['ROLE_USER'])
-            ->setPassword($this->hasher->hashPassword($admin, 'user_secret_'))
+            ->setPassword($this->hasher->hashPassword($admin, 'user_'))
             ->setFirstname('Jane')
             ->setLastname('Doe');
 

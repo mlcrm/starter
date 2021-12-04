@@ -9,7 +9,7 @@
     <div class="sidebar-subitem">
       {{ sidebar.body_header('users', '<i class="bi bi-people-fill"></i>', 'Пользователи'|trans([], 'dashboard')) }}
       <div class="collapse sidebar-list" id="users">
-        {{ sidebar.list_item('#', 'Список пользователей'|trans([], 'dashboard')) }}
+        {{ sidebar.list_item(path('dashboard.user.list'), 'Список пользователей'|trans([], 'dashboard')) }}
         {{ sidebar.list_item('#', 'Режим добавления'|trans([], 'dashboard')) }}
         {{ sidebar.list_item("#", 'Группы пользователей'|trans([], 'dashboard')) }}
       </div>

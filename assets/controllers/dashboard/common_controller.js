@@ -24,4 +24,5 @@ export default class extends Controller {
     const icon = e.currentTarget.querySelector('.sidebar-header__right-icon');
     icon.classList.toggle('sidebar-header__right-icon--active')
   }
+
 }

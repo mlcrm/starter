@@ -2,7 +2,7 @@
 {% import 'dashboard/macro/_action_buttons.html.twig' as actions %}
 
 {% for message in app.flashes('success') %}
-  {{ alert.success('Профиль успешно изменен!'|trans([], 'dashboard')) }}
+  {{ alert.success(message|trans([], 'dashboard')) }}
 {% endfor %}
 
 {{ form_start(form) }}

@@ -2,7 +2,7 @@
 
 namespace App\Form\Dashboard\User;
 
-use App\Entity\User;
+use App\Entity\AdminUser;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
@@ -44,7 +44,7 @@ class ProfileType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => User::class,
+            'data_class' => AdminUser::class,
             'translation_domain' => 'dashboard'
         ]);
     }
