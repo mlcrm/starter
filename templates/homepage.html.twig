@@ -5,11 +5,11 @@
     <div class="card">
       <div class="card-header">
         <i class="bi bi-house-fill"></i>
-        Стартовая страница шаблона
+        {{ 'Template start page'|trans([], 'messages') }}
       </div>
       <div class="card-body">
-        <div class="card-text"><a href="{{ path('dashboard') }}">1. Панель управления системой</a></div>
-        <div class="card-text"><a href="{{ path('account') }}">2. Личный кабинет пользователя</a></div>
+        <div class="card-text"><a href="{{ path('dashboard') }}">1. {{ "System control panel"|trans([], 'messages') }}</a></div>
+        <div class="card-text"><a href="{{ path('account') }}">2. {{ "User's personal account"|trans([], 'messages') }}</a></div>
       </div>
     </div>
   </div>

@@ -1,26 +1,26 @@
 {% import 'dashboard/macro/_sidebar.html.twig' as sidebar %}
 <!---------------- System ------------------->
 <div class="sidebar-item">
-  {{ sidebar.body_header('system', '<i class="bi bi-gear-fill"></i>', 'Система'|trans([], 'dashboard')) }}
+  {{ sidebar.body_header('system', '<i class="bi bi-gear-fill"></i>', 'System'|trans([], 'dashboard')) }}
   <div class="collapse sidebar-list" id="system">
     <!---------------- Settings ------------------->
-    {{ sidebar.list_item("#", 'Настройки'|trans([], 'dashboard')) }}
+    {{ sidebar.list_item("#", 'Settings'|trans([], 'dashboard')) }}
     <!---------------- Users ------------------->
     <div class="sidebar-subitem">
-      {{ sidebar.body_header('users', '<i class="bi bi-people-fill"></i>', 'Пользователи'|trans([], 'dashboard')) }}
+      {{ sidebar.body_header('users', '<i class="bi bi-people-fill"></i>', 'Users'|trans([], 'dashboard')) }}
       <div class="collapse sidebar-list" id="users">
-        {{ sidebar.list_item(path('dashboard.user.list'), 'Список пользователей'|trans([], 'dashboard')) }}
-        {{ sidebar.list_item('#', 'Режим добавления'|trans([], 'dashboard')) }}
-        {{ sidebar.list_item("#", 'Группы пользователей'|trans([], 'dashboard')) }}
+        {{ sidebar.list_item(path('dashboard.user.list'), 'Users list'|trans([], 'dashboard')) }}
+        {{ sidebar.list_item('#', 'Adding mode'|trans([], 'dashboard')) }}
+        {{ sidebar.list_item("#", 'User Groups'|trans([], 'dashboard')) }}
       </div>
     </div>
     <!---------------- Service ------------------->
     <div class="sidebar-subitem">
-      {{ sidebar.body_header('service', '<i class="bi bi-hdd-fill"></i>', 'Обслуживание'|trans([], 'dashboard')) }}
+      {{ sidebar.body_header('service', '<i class="bi bi-hdd-fill"></i>', 'Service'|trans([], 'dashboard')) }}
       <div class="collapse sidebar-list" id="service">
-        {{ sidebar.list_item("#", 'Архивирование'|trans([], 'dashboard')) }}
-        {{ sidebar.list_item("#", 'Внешние загрузки'|trans([], 'dashboard')) }}
-        {{ sidebar.list_item("#", 'Журнал ошибок'|trans([], 'dashboard')) }}
+        {{ sidebar.list_item("#", 'Archiving'|trans([], 'dashboard')) }}
+        {{ sidebar.list_item("#", 'External downloads'|trans([], 'dashboard')) }}
+        {{ sidebar.list_item("#", 'Error log'|trans([], 'dashboard')) }}
       </div>
     </div>
   </div>

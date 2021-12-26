@@ -1,10 +1,10 @@
 {% import 'dashboard/macro/_sidebar.html.twig' as sidebar %}
 <!---------------- Report ------------------->
 <div class="sidebar-item">
-  {{ sidebar.body_header('report', '<i class="bi bi-bar-chart-fill"></i>', 'Отчеты'|trans([], 'dashboard')) }}
+  {{ sidebar.body_header('report', '<i class="bi bi-bar-chart-fill"></i>', 'Reports'|trans([], 'dashboard')) }}
   <div class="collapse sidebar-list" id="report">
-    {{ sidebar.list_item("#", 'Группы отчетов'|trans([], 'dashboard')) }}
-    {{ sidebar.list_item("#", 'Клиенты Online'|trans([], 'dashboard')) }}
-    {{ sidebar.list_item("#", 'Статистика'|trans([], 'dashboard')) }}
+    {{ sidebar.list_item("#", 'Report groups'|trans([], 'dashboard')) }}
+    {{ sidebar.list_item("#", 'Online Clients'|trans([], 'dashboard')) }}
+    {{ sidebar.list_item("#", 'Statistics'|trans([], 'dashboard')) }}
   </div>
 </div>

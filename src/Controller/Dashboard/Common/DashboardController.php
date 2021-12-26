@@ -19,7 +19,7 @@ class DashboardController extends AbstractController
     #[Route(path: '/dashboard', name: 'dashboard', methods: ['GET'])]
     public function index(): Response
     {
-        $this->documentService->setTitle($this->translator->trans('Панель управления', [], 'dashboard'));
+        $this->documentService->setTitle($this->translator->trans('Control Panel', [], 'dashboard'));
 
         return $this->baseController->setOutput('content');
     }

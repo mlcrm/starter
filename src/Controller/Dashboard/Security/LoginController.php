@@ -20,7 +20,7 @@ class LoginController extends AbstractController
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         $this->documentService
-            ->setTitle($this->translator->trans('Вход в панель управления', [], 'dashboard'))
+            ->setTitle($this->translator->trans('Logging into the control panel', [], 'dashboard'))
             ->setRobots('noindex')
             ->addEntrypoint('dashboard')
         ;

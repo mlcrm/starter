@@ -19,7 +19,7 @@ class HomeController extends AbstractController
     public function index(): Response
     {
         $this->documentService
-            ->setTitle($this->translator->trans('Шаблон А', [], 'messages'))
+            ->setTitle($this->translator->trans('Template A', [], 'messages'))
             ->addEntrypoint('app')
         ;
 

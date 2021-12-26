@@ -16,25 +16,24 @@ class ProfileType extends AbstractType
     {
         $builder
             ->add('firstname', TextType::class, [
-                'label' => 'Имя'
+                'label' => 'Name'
             ])
             ->add('lastname', TextType::class, [
-                'label' => 'Фамилия'
+                'label' => 'Surname'
             ])
             ->add('email', TextType::class, [
-                'label' => 'Адрес эл.почты'
+                'label' => 'E-mail address'
             ])
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'required' => false,
                 'mapped' => false,
-                'invalid_message' => 'Поля пароля должны совпадать',
                 'first_options'  => [
-                    'label' => 'Пароль',
+                    'label' => 'Password',
                     'attr' => ['autocomplete' => 'off'],
                 ],
                 'second_options' => [
-                    'label' => 'Повторите пароль',
+                    'label' => 'Repeat Password',
                     'attr' => ['autocomplete' => 'off'],
                 ],
             ])

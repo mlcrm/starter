@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class ProfileController extends AbstractController
 {
@@ -19,15 +20,16 @@ class ProfileController extends AbstractController
         private DocumentService $documentService,
         private EntityManagerInterface $entityManager,
         private UserPasswordHasherInterface $passwordHasher,
+        private TranslatorInterface $translator
     ){}
 
     #[Route(path: '/dashboard/profile', name: 'dashboard.profile.edit', methods: ['GET', 'POST'])]
     public function edit(Request $request): Response
     {
         $this->documentService
-            ->setTitle('Редактирование профиля')
-            ->addBreadcrumbsItem('Панель управления', $this->generateUrl('dashboard'))
-            ->addBreadcrumbsItem('Профиль')
+            ->setTitle($this->translator->trans('Profile', [], 'dashboard'))
+            ->addBreadcrumbsItem('Control Panel', $this->generateUrl('dashboard'))
+            ->addBreadcrumbsItem('Profile')
         ;
 
         $user = $this->getUser();
@@ -43,7 +45,7 @@ class ProfileController extends AbstractController
             }
             $this->entityManager->persist($user);
             $this->entityManager->flush();
-            $this->addFlash('success', 'Профиль успешно изменен!');
+            $this->addFlash('success', 'Profile changed successfully!');
         }
 
         $data['form'] = $form->createView();

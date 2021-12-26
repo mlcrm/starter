@@ -8,9 +8,9 @@ class DocumentService
 {
     private string $direction = 'ltr';
     private string $lang = 'ru';
-    private string $title = 'Шаблон А';
-    private string $description = 'Стартовый шаблон версии А';
-    private string $keywords = 'стартовый, шаблон';
+    private string $title = 'Template A';
+    private string $description = 'version A starter template';
+    private string $keywords = 'starter, template';
     private string $robots = 'index, follow, all';
     private string $author = 'Mutus Liber';
     private string $favicon = 'images/favicon.ico';

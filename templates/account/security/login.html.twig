@@ -22,7 +22,7 @@
                         type="email"
                         id="username"
                         name="_username"
-                        placeholder="{{ 'Адрес эл.почты'|trans({}, 'dashboard') }}"
+                        placeholder="{{ 'E-mail address'|trans([], 'account') }}"
                         value="{{ lastUsername }}"
                         aria-label="Username"
                         aria-describedby="user-icon" />
@@ -39,7 +39,7 @@
                         type="password"
                         id="password"
                         name="_password"
-                        placeholder="{{ 'Пароль'|trans({}, 'dashboard') }}"
+                        placeholder="{{ 'Password'|trans({}, 'account') }}"
                         aria-label="Password"
                         aria-describedby="email-icon" />
             </div>
@@ -51,7 +51,7 @@
             {% endif %}
 
             <button class="btn btn-primary mb-5 w-100" type="submit">
-                {{ 'Войти'|trans({}, 'dashboard') }}
+                {{ 'Sign in'|trans([], 'account') }}
             </button>
 
         </form>
