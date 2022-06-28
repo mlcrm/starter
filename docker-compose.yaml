@@ -26,7 +26,7 @@ services:
         networks:
             - backend
         ports:
-            - "127.0.0.1:8000:80"
+            - "80:80"
         volumes:
             - ./:/app
 
